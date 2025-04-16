@@ -1,0 +1,42 @@
+[gd_scene load_steps=2 format=3 uid="uid://6fgjd0gqhndi"]
+
+[ext_resource type="Script" uid="uid://cbsievb0s7y82" path="res://ui/menus/upgrade_menu.gd" id="1_486k7"]
+
+[node name="UpgradeMenu" type="CanvasLayer"]
+script = ExtResource("1_486k7")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 72
+text = "UPGRADES"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="NewGameButton" type="Button" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "New game"
+
+[node name="QuitButton" type="Button" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "Quit to main menu"
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/NewGameButton" to="." method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

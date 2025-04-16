@@ -11,9 +11,29 @@ config_version=5
 [application]
 
 config/name="Full Metal Snake"
+run/main_scene="uid://fbfn6ulxnf6v"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+SceneManager="*res://autoloads/scene_manager.gd"
+SnakeManager="*res://autoloads/snake_manager.gd"
+Global="*res://autoloads/global.gd"
+
+[display]
+
+window/size/viewport_width=800
+window/size/viewport_height=800
 
 [dotnet]
 
 project/assembly_name="Full Metal Snake"
+
+[layer_names]
+
+2d_physics/layer_1="Wall"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0

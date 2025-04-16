@@ -1,0 +1,49 @@
+[gd_scene load_steps=2 format=3 uid="uid://fbfn6ulxnf6v"]
+
+[ext_resource type="Script" uid="uid://swo4wx1lx3f5" path="res://ui/menus/start_menu.gd" id="1_mqq30"]
+
+[node name="StartMenu" type="CanvasLayer"]
+script = ExtResource("1_mqq30")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 72
+text = "FULL METAL SNAKE"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="NewButton" type="Button" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "New game"
+
+[node name="LoadButton" type="Button" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "Load game"
+
+[node name="QuitButton" type="Button" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/NewButton" to="." method="_on_new_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/LoadButton" to="." method="_on_load_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
